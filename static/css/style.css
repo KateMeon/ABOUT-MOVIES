@@ -1,13 +1,9 @@
-body {
-    background-color: #1abc9c;
-}
-
 .header {
     padding: 80px;
     text-align: center;
     background: #1abc9c;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .header h1 {
@@ -18,26 +14,6 @@ body {
     font-size: 30px;
     color: #54FF9F;
 }
-
-.navbar {
-    overflow: hidden;
-    background-color: #3B4A4E;
-}
-
-.navbar a {
-    margin-left: auto;
-    margin-right: 0em;
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
-
-.block_menu {
-    float:right;
-}
-#carouselIMG {
-    height: 250px;
-    width: 600px;
-    align: center;
+img {
+    margin-left: 30px;
 }

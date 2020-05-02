@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+
 {% block head %}
-    <link rel="stylesheet" type="text/css" href='static/css/style_registr.css'/>
+<link rel="stylesheet" type="text/css" href='static/css/style_registr.css'/>
 {% endblock %}
 
 {% block content %}
 <form class="login-form">
-    <h1>Регистрация</h1>
+    <h1>Вход</h1>
     <div class="form-group">
         <div class="login-box">
             <input type="login" class="form-control" id="Login" placeholder="Введите логин">
@@ -21,6 +22,6 @@
         <input type="checkbox" class="form-check-input" id="Remember">
         <label class="form-check-label" for="Remember">Запомнить меня</label>
     </div>
-    <button type="submit" class="btn btn-secondary">Ок</button>
+    <button type="submit" class="btn btn-secondary">Войти</button>
 </form>
 {% endblock %}
