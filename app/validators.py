@@ -63,13 +63,3 @@ class NickValidator:
     def __call__(self, form, field):
         if len(field.data) > 15:
             raise StopValidation(message='Nick must be up to 16 characters')
-
-
-class RepeatPasswordValidator:
-    def __init__(self, password, message=None):
-        self.message = message
-        self.password_field_ = password
-
-    def __call__(self, form, field):
-        if field.data != self.password_field_.data:
-            raise StopValidation(message="Passwords not match")
