@@ -50,10 +50,12 @@ def registration():
     if form.validate_on_submit():
         session = get_session()
         user = User()
+        user.email = form.email.data
         user.login = form.login.data
-        user.password = form.password.data
+        user.hashed_password = generate_password_hash(form.password.data)
         session.add(user)
         session.commit()
+        return redirect('/')
     return render_template('registration.html', title='Registration', form=form)
 
 
@@ -63,7 +65,7 @@ def login():
     if form.validate_on_submit():
         session = get_session()
         user = session.query(User).filter(User.email == form.email.data).first()
-        if user and user.check_password(form.password.data):
+        if user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return redirect("/")
         return render_template('login.html',

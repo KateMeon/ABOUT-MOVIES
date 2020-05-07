@@ -65,18 +65,3 @@
     border-radius: 5%;
     border-color: #292f36;
 }
-
-.allert_error {
-    background: #a82150; /* Для старых браузров */
-    background: linear-gradient(to bottom right, #a82150, #7b00e6);
-    color: aliceblue;
-    font-size: 20px;
-    text-align: center;
-    width: auto;
-    height: 25px;
-    position: absolute;
-    bottom: 1px;
-    right: 1px;
-    border-radius: 5%;
-    border-color: #292f36;
-}
