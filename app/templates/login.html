@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href='/static/css/style_registr.css'/>
+{% endblock %}
+
+{% block form %}
+    <form class="login-form" action="" method="post">
+        <h1>Login</h1>
+        <p>
+            {{ form.login.label }}<br>
+            {{ form.login(class="form-control", type="text") }}<br>
+            {% for error in form.login.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control", type="password") }}<br>
+            {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-dark") }}</p>
+    </form>
+    <div class="">{{ message }}</div>
+{% endblock %}

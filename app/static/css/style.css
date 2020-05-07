@@ -1,0 +1,65 @@
+.bg {
+    padding: 80px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.bg h1 {
+    font-size: 60px;
+}
+
+.bg a {
+    font-size: 30px;
+}
+
+.gradient {
+    background: #20a370; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #7b00e6, #20a370);
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    background: #20a370; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #20a370, #7b00e6);
+}
+
+.start_button {
+    background: #7b00e6; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #7b00e6, #ED6E8C);
+    width: 50%;
+    margin-top: 15px;
+    color: aliceblue;
+}
+
+.anim, .anim svg {
+    position: relative;
+    width: 10%;
+    height: 10%;
+}
+
+.anim path {
+    stroke-width: 2;
+}
+
+.my_form {
+    color: aliceblue;
+    background: #282828; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #282828, #404040);
+}
+
+.message {
+    background: #20a370; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #20a370, #7b00e6);
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+}

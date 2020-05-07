@@ -1,0 +1,42 @@
+{% extends "base_main.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href='static/css/style_registr.css'/>
+{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.login.label }}<br>
+            {{ form.login(class="form-control", type="text") }}<br>
+            {% for error in form.login.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control", type="password") }}<br>
+            {% for error in form.password.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.password_again.label }}<br>
+            {{ form.password_again(class="form-control", type="password") }}<br>
+            {% for error in form.password_again.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <button type="submit" class="btn btn-primary">Ok</button>
+        <div>{{ message }}</div>
+    </form>
+</div>
+
+{% endblock %}
