@@ -1,8 +1,8 @@
 .login-form {
-    padding: 50px;
+    padding: 30px;
     text-align: center;
-    -webkit-box-shadow:0 3px 50px 0 rgba(0,0,0,.1);
-    box-shadow:0 3px 50px 0 rgba(0,0,0,.1);
-    border-radius:5px;
-    margin: 10px 30% 0 30%;
+    -webkit-box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 50px 0 rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 5px 30% 0 30%;
 }

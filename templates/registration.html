@@ -1,26 +1,53 @@
 {% extends "base.html" %}
 {% block head %}
-    <link rel="stylesheet" type="text/css" href='static/css/style_registr.css'/>
+<link rel="stylesheet" type="text/css" href='static/css/style_registr.css'/>
 {% endblock %}
 
 {% block content %}
-<form class="login-form">
+<form action="" method="post" enctype="multipart/form-data" class="login-form">
+    {{ form.hidden_tag() }}
     <h1>Регистрация</h1>
     <div class="form-group">
         <div class="login-box">
-            <input type="login" class="form-control" id="Login" placeholder="Введите логин">
+            <p>
+                {{ form.login(type="login", class="form-control", id="Login",
+                placeholder="Введите логин") }}<br>
+                {% for error in form.login.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
         </div>
     </div>
     <div class="form-group">
         <div class="login-box">
-            <input type="password" class="form-control" id="InputPassword"
-                   placeholder="Введите пароль">
+            <p>
+                {{ form.password(class="form-control", type="password", id="InputPassword",
+                placeholder="Введите пароль") }}<br>
+                {% for error in form.password.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
         </div>
     </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="Remember">
-        <label class="form-check-label" for="Remember">Запомнить меня</label>
+    <div class="form-group">
+        <div class="login-box">
+            <p>
+                {{ form.password_again(class="form-control", type="password", id="InputPassword",
+                placeholder="Повторите пароль") }}<br>
+                {% for error in form.password_again.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
+        </div>
     </div>
-    <button type="submit" class="btn btn-secondary">Ок</button>
+    <button type="submit" class="btn btn-secondary">Войти</button>
+    <div>{{ message }}</div>
 </form>
+
 {% endblock %}

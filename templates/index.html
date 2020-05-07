@@ -1,38 +1,44 @@
 {% extends "base.html" %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href='static/css/style.css'/>
+<link rel="stylesheet" type="text/css" href='/static/css/style.css'/>
 {% endblock %}
 
 {% block content %}
-<div class="header">
-    <h1>ABOUT MOVIES</h1>
-    <p>О фильмах</p>
-    <a href="#" class="btn btn-outline-info btn-sm active" role="button">Начать</a>
+<style>
+    body {
+    background-color: #292f36;
+    }
+</style>
+<div class="bg gradient">
+    <table align="center">
+        <tr>
+            <td><img class="left_btn" src="/static/img/1.svg" width="256" height="256"></td>
+            <td>
+                <h1>ABOUT MOVIES</h1>
+                <h4>О фильмах</h4>
+            </td>
+            <td><img class="right_btn" src="/static/img/feedback.svg" width="256" height="256"></td>
+        </tr>
+        <tr>
+            <td>
+                <img class="left_btn" src="/static/img/movie.svg" width="256" height="256">
+            </td>
+            <td>
+                <h5>
+                    На этом сайте вы можете выбрать себе фильм по вкусу,
+                </h5>
+                <h5>
+                    а так же помочь в выборе фильма другим, оставляя оценки
+                </h5>
+            </td>
+            <td>
+                <img class="right_btn" src="/static/img/camera.svg" width="256" height="256">
+            </td>
+        </tr>
+    </table>
 </div>
-
-<ul class="list-unstyled">
-    <li class="media">
-        <img class="mr-3" src="/static/img/movie.jpg" alt="Здесь должна быть картинка"
-             height="400px" width="400px">
-        <div class="media-body">
-            <h5 class="mt-0 mb-1">Миллионы фильмов, десятки жанров</h5>
-        </div>
-    </li>
-    <li class="media my-4">
-        <img class="mr-3" src="/static/img/difficult_choice.jpg"
-             alt="Generic placeholder image" height="300px" width="400px">
-        <div class="media-body">
-            <h5 class="mt-0 mb-1">Очень сложно сделать выбор</h5>
-        </div>
-    </li>
-    <li class="media">
-        <img class="mr-3" src="/static/img/carousel_opinion.jpg"
-             alt="Generic placeholder image" height="300px" width="400px">
-        <div class="media-body">
-            <h5 class="mt-0 mb-1">Но здесь Вам помогут!</h5>
-            Читай мнения других людей и делись своим!
-        </div>
-    </li>
-</ul>
+<center>
+    <a class="btn start_button" href="/main_page">Начать использование сервиса</a>
+</center>
 {% endblock %}
