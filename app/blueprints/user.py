@@ -1,34 +1,15 @@
 from flask import Blueprint
 from app.data import db_session
+from flask_login import LoginManager, logout_user, login_required, login_user
 from app.data.users import *
 from app.forms import *
 from app import app
 from app import get_session
-from flask import render_template, redirect
-from flask_login import LoginManager, login_required, login_user, logout_user, current_user
-from itsdangerous import URLSafeTimedSerializer
+from flask import render_template, redirect, request
 
 user_blueprint = Blueprint('user_api', __name__, template_folder=app.template_folder)
 login_manager = LoginManager()
 login_manager.init_app(app)
-
-
-def generate_confirmation_token(email):
-    serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
-    return serializer.dumps(email, salt=app.config['SECURITY_PASSWORD_SALT'])
-
-
-def confirm_token(token, expiration=3600):
-    serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
-    try:
-        email = serializer.loads(
-            token,
-            salt=app.config['SECURITY_PASSWORD_SALT'],
-            max_age=expiration
-        )
-    except:
-        return False
-    return email
 
 
 @login_manager.user_loader
@@ -62,7 +43,7 @@ def registration():
 @user_blueprint.route('/login', methods=['POST', "GET"])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
+    if request.method == "POST":
         session = get_session()
         user = session.query(User).filter(User.email == form.email.data).first()
         if user.check_password(form.password.data):
@@ -72,17 +53,3 @@ def login():
                                message="Incorrect password",
                                form=form)
     return render_template('login.html', title='Login', form=form)
-
-
-@user_blueprint.route('/')
-@user_blueprint.route('/index')
-@user_blueprint.route('/index/token')
-def main(token=''):
-    if token:
-        if confirm_token(token) == current_user.email:
-            session = db_session.create_session()
-            user = session.query(User).get(current_user.id)
-            user.confirm = True
-            session.commit()
-            current_user.confirm = True
-    return render_template('index.html', title='ABOUT MOVIES')

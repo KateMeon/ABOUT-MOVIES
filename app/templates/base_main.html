@@ -21,7 +21,9 @@
                 <a class="btn btn-dark" href="/registration">Register</a>
             </p>
         {% else %}
-            <p>{{ current_user.login }}</p>
+            <a class="navbar-brand" href="/index">
+                {{ current_user.login }}
+            </a>
         {% endif %}
     </nav>
 </header>

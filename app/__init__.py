@@ -35,5 +35,7 @@ def send_email(subject, recipients, text_body):
 
 
 from app.blueprints import user
+from app.blueprints import main
 
+app.register_blueprint(main.blueprint)
 app.register_blueprint(user.user_blueprint)
