@@ -36,6 +36,7 @@ def registration():
         user.hashed_password = generate_password_hash(form.password.data)
         session.add(user)
         session.commit()
+        login_user(user, remember=True)
         return redirect('/')
     return render_template('registration.html', title='Registration', form=form)
 

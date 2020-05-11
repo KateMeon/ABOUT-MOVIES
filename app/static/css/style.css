@@ -72,3 +72,8 @@
     background: #ED6E8C; /* Для старых браузров */
     background: linear-gradient(to bottom right, #ED6E8C, #7b00e6);
 }
+
+
+.section_main {
+    margin-top: 100px;
+}
