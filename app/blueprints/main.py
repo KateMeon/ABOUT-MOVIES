@@ -35,7 +35,7 @@ def main(token=''):
             user.confirm = True
             session.commit()
             current_user.confirm = True  # для того что бы результат подтверждения был сразу
-    return render_template('main.html', title='ABOUT MOVIES')
+    return render_template('index.html', title='ABOUT MOVIES')
 
 
 @blueprint.route("/index")

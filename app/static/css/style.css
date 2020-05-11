@@ -30,9 +30,11 @@
 .start_button {
     background: #7b00e6; /* Для старых браузров */
     background: linear-gradient(to bottom right, #7b00e6, #ED6E8C);
-    width: 50%;
+    width: 100px;
+    height: 100px;
     margin-top: 15px;
     color: aliceblue;
+    border-radius: 100%;
 }
 
 .anim, .anim svg {
@@ -64,4 +66,9 @@
     right: 1px;
     border-radius: 5%;
     border-color: #292f36;
+}
+
+.reverse_color:hover {
+    background: #ED6E8C; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #ED6E8C, #7b00e6);
 }
