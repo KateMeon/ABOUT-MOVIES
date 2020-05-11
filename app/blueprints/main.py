@@ -35,7 +35,11 @@ def main(token=''):
             user.confirm = True
             session.commit()
             current_user.confirm = True  # для того что бы результат подтверждения был сразу
-    return render_template('index.html', title='ABOUT MOVIES')
+    return render_template('index.html', title='ABOUT MOVIES',
+                           posters=["/static/posters/1.jpg",
+                                    "/static/posters/0.jpg"],
+                           posters_right=["/static/posters/0.jpg",
+                                          "/static/posters/1.jpg"])
 
 
 @blueprint.route("/index")

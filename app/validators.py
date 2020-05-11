@@ -1,4 +1,6 @@
 from wtforms.validators import StopValidation
+from app import get_session
+from app.data.users import User
 
 
 class LengthError(Exception):
@@ -63,3 +65,13 @@ class NickValidator:
     def __call__(self, form, field):
         if len(field.data) > 15:
             raise StopValidation(message='Nick must be up to 16 characters')
+
+
+class MailValidator:
+    def __init__(self, message=None):
+        self.message = message
+
+    def __call__(self, form, field):
+        session = get_session()
+        for u in session.query(User).filter(User.email == field.data):
+            raise StopValidation("User with this EMail already exist")
