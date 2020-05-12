@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block form %}
+<div class="content_block film">
+    <div id="poster">
+        <img src="/app/static/img/{{ movie_id }}.jpg" itemprop="image" alt="Постер фильма"
+             id="main_poster">
+    </div>
+    <div class="info_block">
+        <div class="info_param">Name of film</div>
+        <div class="info_data">{{ movie.name }}</div>
+        <div class="info_param">Genre</div>
+        <div class="info_data">{{ movie.genre }}</div>
+        <div class="info_param">Year of release</div>
+        <div class="info_data">{{ movie.year }}</div>
+    </div>
+</div>
+{% endblock %}

@@ -77,3 +77,23 @@
 .section_main {
     margin-top: 0;
 }
+.navi {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    background: #282828; /* Для старых браузров */
+    background: linear-gradient(to bottom right, #282828, #404040);
+    color: aliceblue;
+    z-index: -1;
+}
+
+.infoi {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}

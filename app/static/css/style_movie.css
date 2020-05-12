@@ -1,0 +1,8 @@
+.info_block {
+    width: 70%;
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}

@@ -49,22 +49,22 @@ class PasswordValidator:
     def __call__(self, form, field):
         try:
             check_password(field.data.strip())
-        except Exception as ex:
+        except Exception as error:
             raise StopValidation(
-                message=str(ex))
+                message=str(error))
 
 
 class NickValidator:
     """
-    Проверяет что ник не больше 15 символов
+    Проверяет, что ник не больше 10 символов
     """
 
     def __init__(self, message=None):
         self.message = message
 
     def __call__(self, form, field):
-        if len(field.data) > 15:
-            raise StopValidation(message='Nick must be up to 16 characters')
+        if len(field.data) > 10:
+            raise StopValidation(message='Nick must be up to 10 characters')
 
 
 class MailValidator:
